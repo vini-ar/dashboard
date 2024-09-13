@@ -1,0 +1,226 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    height: 100vh;
+    font-size: 62.5%;
+}
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    grid-template-areas: 
+    "sidebar header header header"
+    "sidebar content content content"
+    "sidebar content content content"
+    "sidebar content content content";
+}
+
+:root {
+    --blue: #1992D4;
+    --grey: #E2E8F0;
+    --yellow: #F0B429;
+    --white: #f4f4f4;
+}
+
+.container > * {
+    border: 1px solid black;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    font-size: 2em;
+    font-weight: bolder;
+    color: var(--white);
+    background-color: var(--blue);
+    padding-left: 12.5%;
+}
+
+.logo {
+    padding-top: 10px;
+}
+
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.nav-item {
+    flex: 1;
+}
+
+.nav-link  {
+    text-decoration: none;
+    font-weight: bolder;
+    display: flex;
+    color: var(--white);
+}
+
+.icons {
+    display: inline-block;
+    margin-right: 20px;
+    width: 1.4em;
+    height: 1.4em;
+    margin-top: -2px;
+}
+
+
+.icon-brand {
+    width: 70px;
+    height: 70px;
+    margin-bottom: -20px;
+    margin-right: 12px;
+    background-image: url(/src/icons/square-rounded-badge-outline.svg);
+}
+
+.icon-home {
+    background-image: url(/src/icons/home.svg);
+}
+
+.icon-profile {
+    background-image: url(/src/icons/clipboard-account-outline.svg);
+}
+.icon-message {
+    background-image: url(/src/icons/message-reply.svg);
+}
+
+.icon-history {
+    background-image: url(/src/icons/clock-time-four.svg);
+}
+
+.icon-task {
+    background-image: url(/src/icons/note-multiple.svg);
+}
+.icon-communities {
+    background-image: url(/src/icons/account-group.svg);
+}
+
+.icon-settings {
+    background-image: url(/src/icons/cog.svg);
+}
+.icon-support {
+    background-image: url(/src/icons/help.svg);
+}
+.icon-privacy {
+    background-image: url(/src/icons/shield-check.svg);
+}
+
+.features {
+    padding-top: 50px;
+}
+
+
+
+.options {
+    padding-top: 50px;
+}
+
+
+
+
+
+
+
+
+.header {
+    grid-area: header;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.header > * {
+    border: 1px solid black;
+}
+
+.search-bar, .perfil-info {
+    height: 35%;
+}
+.display-greetings, .buttons-container {
+    height: 65%;
+}
+
+.search-container, .display-greetings {
+    flex: 1 1 60%;
+}
+
+.perfil-info, .buttons-container {
+    flex: 1 1 40%;
+}
+
+.search-container {
+    padding-left: 35px;
+}
+.search-container > label {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-btn {
+    border: 0px;
+    background-color: var(--white);
+}
+
+.search-input {
+    width: 80%;
+    height: 40%;
+    border-radius: 9999px;
+    border: 2px solid black;
+    background-color: var(--grey);
+}
+
+.icon-search {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-bottom: -3px;
+    margin-right: -10px;
+    background-image: url(/src/icons/magnify.svg);
+}
+
+.perfil-image {
+    src: url(/src/icons/account-group.svg);
+    width: 50px;
+    height: 50px;;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header-btn {
+    flex-basis: 25%;
+    height: fit-content;
+    background-color: var(--blue);
+    color: var(--white);
+    font-weight: bolder;
+    font-size: 1.4em;
+    padding: 15px;
+    border-radius: 9999px;
+    border: 2px solid;
+}
+
+.content {
+    grid-area: content;
+    background-color: var(--grey);
+}
+
