@@ -278,6 +278,7 @@ body {
     "projects projects info"
     "projects projects info"
     "projects projects info";
+    padding: 2%;
 }
 
 .user-projects-container {
@@ -286,12 +287,10 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
-    padding-left: 10px;
 }
 .user-project-header {
     flex: 1 1 100%;
     height: fit-content;
-    padding-top: 10px;
 }
 
 .project {
@@ -300,6 +299,7 @@ body {
     border: 1px solid black;
     padding: 10px;
     background-color: var(--white);
+    border-radius: 10px;
 }
 
 .project-name {
@@ -347,6 +347,71 @@ body {
 
 .info-website {
     grid-area: info;
+    display: flex;
+    flex-direction: column;
+    padding: 0 7%;
 }
 
+.announcements, .trending {
+    flex: 1;
+}
+
+.announcements-container, .trending-container {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: var(--white);
+}
+
+.trending-container {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    height: 84%;
+}
+.trending-container > * {
+    flex: 1 1 25%
+}
+.trending-perfil {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    font-weight: bolder;
+}
+.trending-perfil-username {
+    display: block;
+    font-size: 1.4em
+}
+.trending-perfil-project {
+    font-size: 1.2em;
+    color: var(--grey-strong)
+}
+
+
+.announcements-container {
+    padding: 10% 5% 5% 5%;
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+     
+}
+
+.announcements-header {
+    height: 21%;
+}
+.announcements-container > * {
+    flex: 1;
+}
+
+.announcements-container > div > h3 {
+    font-size: 1.4em;
+}
+.announcements-container > div > span {
+    font-size: 1.2em;
+    color: var(--grey-strong);
+    font-weight: bolder;
+}
+.announcements-container > *:not(:last-child) {
+    border-bottom: 1px solid var(--grey-strong);
+}
 
