@@ -1,3 +1,11 @@
+:root {
+    --blue: #1992D4;
+    --grey: #E2E8F0;
+    --grey-strong: #787878;
+    --yellow: #F0B429;
+    --white: #f4f4f4;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -22,17 +30,6 @@ body {
     "sidebar content content content"
     "sidebar content content content"
     "sidebar content content content";
-}
-
-:root {
-    --blue: #1992D4;
-    --grey: #E2E8F0;
-    --yellow: #F0B429;
-    --white: #f4f4f4;
-}
-
-.container > * {
-    border: 1px solid black;
 }
 
 .sidebar {
@@ -140,10 +137,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
-
-.header > * {
-    border: 1px solid black;
+    border-bottom: 1px solid var(--grey);
 }
 
 .search-bar, .perfil-info {
@@ -161,10 +155,10 @@ body {
     flex: 1 1 40%;
 }
 
-.search-container {
+.search-container, .display-greetings {
     padding-left: 35px;
 }
-.search-container > label {
+.search-container > form {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -175,14 +169,16 @@ body {
 .search-btn {
     border: 0px;
     background-color: var(--white);
+    cursor: pointer;
 }
 
 .search-input {
-    width: 80%;
+    width: 100%;
     height: 40%;
     border-radius: 9999px;
     border: 2px solid black;
     background-color: var(--grey);
+    padding-left: 10px;
 }
 
 .icon-search {
@@ -194,17 +190,70 @@ body {
     background-image: url(/src/icons/magnify.svg);
 }
 
-.perfil-image {
-    src: url(/src/icons/account-group.svg);
-    width: 50px;
-    height: 50px;;
+.perfil-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    
+}
+
+.notification-btn {
+    cursor: pointer;
+    border: 0;
+    background-color: inherit;
+}
+
+.icon-notification {
+    display: inline-block;
+    background-image: url(/src/icons/bell-ring-outline.svg);
+    width: 25px;
+    height: 25px;
+}
+
+
+.perfil-image-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    
+}
+
+.perfil-info > span {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.display-greetings {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+}
+
+.perfil-image-big {
+    width: 80px;
+    height: 80px;
+    border-radius: 999px;
+}
+
+.greetings-text {
+    font-size: 1.4em;
+    font-weight: bolder;
+}
+
+.greetings-text-user {
+    font-size: 1.4em;
+    font-weight: bolder;
 }
 
 .buttons-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 .header-btn {
@@ -217,10 +266,87 @@ body {
     padding: 15px;
     border-radius: 9999px;
     border: 2px solid;
+    cursor: pointer;
 }
 
 .content {
     grid-area: content;
     background-color: var(--grey);
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    grid-template-areas: 
+    "projects projects info"
+    "projects projects info"
+    "projects projects info";
 }
+
+.user-projects-container {
+    grid-area: projects;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 10px;
+}
+.user-project-header {
+    flex: 1 1 100%;
+    height: fit-content;
+    padding-top: 10px;
+}
+
+.project {
+    flex: 1 1 45%;
+    height: 25%;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: var(--white);
+}
+
+.project-name {
+    height: 25%;
+}
+
+.project-description {
+    font-size: 1.2em;
+    color: var(--grey-strong);
+    font-weight: bolder;
+    height: 50%;
+}
+
+.project-btn {
+    cursor: pointer;
+    background-color: inherit;
+    border: 0px;
+}
+
+.project-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 10px;
+    height: 25%;
+}
+
+.icon-project {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+.icon-favorite {
+    background-image: url(/src/icons/star-plus.svg);
+}
+.icon-views {
+    background-image: url(/src/icons/eye-plus.svg);
+}
+.icon-share {
+    background-image: url(/src/icons/share.svg);
+}
+
+
+.info-website {
+    grid-area: info;
+}
+
 
